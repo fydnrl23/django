@@ -1,0 +1,9 @@
+<h2>Auther: {{post.auther}}</h2>
+
+{% if post.photo %}
+    <div>
+        <img src="{{post.photo.url}}" />
+    </div>
+{% endif %}
+
+{{post.message}}  

@@ -1,2 +1,5 @@
-djang~=3.0.0
+djang~=4.1.7
 pillow
+django-debug-toolbar
+django-extensions
+django-bootstrap4 

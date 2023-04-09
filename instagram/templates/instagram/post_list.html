@@ -1,3 +1,5 @@
+{% load bootstrap4 %}
+
 <!doctype html>
 <html lang="ko">
     <head>
@@ -16,7 +18,7 @@
                 {% for post in post_list %}
                 <tr>
                     <td>
-                        {{post.message}}
+                        {{post.pk}}
                     </td>
                     <td>
                         {% if post.photo %}
@@ -25,9 +27,18 @@
                             No Photo
                         {% endif %}
                     </td>
+                    <td>
+                        <a href="{{ post.get_absolute_url }}">
+                            {{ post.message }}
+                        </a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+        
+        {% if is_paginated %}
+            {% bootstrap_pagination page_obj size="small" justify_content="center" %}
+        {% endif %}
     </body>
 </html>
